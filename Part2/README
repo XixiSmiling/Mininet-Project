@@ -1,0 +1,26 @@
+# PART 2 
+#
+# Code file description:
+#	mytopo2.py : This file sets up topology, which like this:
+#	
+#                   host1(h1) -- switch(s1) -- switch(s2) -- host3(h3)
+#                                   |			  |
+#                                host2(h2)	    host4(h4)
+#				
+#	newswitch2.py: This file implements multiple static layer-3 switchs, which is based on layer-2 switch's of_tutorial.py file. 
+#			And this layer-3 switchs can handle ARP, static routing, ICMP and flow mod.
+#
+#				 
+# Instructions of running code:
+# I. Preparation:
+#    upload code files into VM, and the location of files: 
+#           mytopo2.py:        /home/mininet/
+#	    newswitch2.py:   /home/mininet/pox/pox/misc/
+# II. Multiple layer-3 switch:
+#    1) connect your SSH terminal to VM 
+#    2) type following code in SSH terminal:  
+#	    $ sudo mn --custom mytopo2.py --topo mytopo --mac --switch ovsk --controller remote
+#    3) type following code in VM:
+#	    $ cd pox
+#	    $ ./pox.py log.level --DEBUG misc.newswitch2
+#    4) now you can test this network
